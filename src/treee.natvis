@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+
+	<Type Name="std::path::PathBuf" Priority="High">
+		<DisplayString>{(char*)inner.inner.inner.bytes.buf.inner.ptr.pointer.pointer,[inner.inner.inner.bytes.len]s8}</DisplayString>
+		<Expand>
+		</Expand>
+	</Type>
+
+
+	<!-- FileInfo Type -->
+	<Type Name="treee::FileInfo">
+		<DisplayString>{size} bytes</DisplayString>
+		<Item Name="name">name</Item>
+		<Item Name="regex_matched">regex_matched</Item>
+		<Item Name="size">size</Item>
+		<Item Name="parent" Optional="true">parent</Item>
+	</Type>
+
+	<!-- DirInfo Type -->
+	<Type Name="treee::DirInfo">
+		<DisplayString>depth = {depth}, matched = {regex_matched}, path = {path}</DisplayString>
+		<Expand>
+			<Item Name="path">path</Item>
+			<Item Name="name">name</Item>
+			<Item Name="depth">depth</Item>
+			<Item Name="regex_matched">regex_matched</Item>
+			<Item Name="immediate_files_size">immediate_files_size</Item>
+			<Item Name="total_size">total_size</Item>
+			<Item Name="contains_dir_matching_regex">contains_dir_matching_regex</Item>
+			<Item Name="contains_file_matching_regex">contains_file_matching_regex</Item>
+			<Item Name="parent">parent</Item>
+
+			<ExpandedItem Optional="true">sub_dirs</ExpandedItem>
+			<ExpandedItem Optional="true">sub_files</ExpandedItem>
+		</Expand>
+
+	</Type>
+
+
+
+
+</AutoVisualizer>
+
